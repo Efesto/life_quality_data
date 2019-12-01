@@ -23,8 +23,8 @@ class FileHandler(BaseHTTPRequestHandler):
 			self.end_headers()
 
 			with open(FILE_PATH, 'rb') as file:
-				content = file.read()	.decode("utf-8").replace("\n", "<br />")			
-        self.wfile.write(content)
+				content = file.read().decode("utf-8").replace("\n", "<br />")
+				self.wfile.write(content)
 
 with socketserver.TCPServer(("", SERVER_PORT), FileHandler) as httpd:
     print("serving at port", SERVER_PORT)
