@@ -3,10 +3,10 @@ import RPi.GPIO as GPIO
 import time
 
 DHT_SENSOR = Adafruit_DHT.DHT22
-DHT_PIN=17
+DHT_PIN = 17
 INTERVAL = 60 * 10
 
-FILE_PATH="/home/pi/share/readings.csv"
+FILE_PATH="~/share/readings.csv"
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(DHT_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
@@ -23,6 +23,5 @@ try:
 			print("Nope")
 		file.close()
 		time.sleep(INTERVAL)
-except KeyboardInterrupt:
-	print("Ciao capo")
+except KeyboardInterrupt:	
 	pass

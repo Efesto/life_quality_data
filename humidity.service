@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 ExecStart=/usr/bin/python3 -u humidity.py
-WorkingDirectory=/home/pi
+WorkingDirectory=/home/pi/pi_humidity
 StandardOutput=inherit
 StandardError=inherit
 Restart=always
