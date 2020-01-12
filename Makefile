@@ -1,4 +1,5 @@
 install-service:
+    cd service
 	sudo cp humidity.service /etc/systemd/system
 	sudo systemctl enable humidity.service
 
@@ -6,7 +7,7 @@ install-service:
 	sudo systemctl enable humidity-server.service
 
 install-deps:
-	pip install Adafruit_Python_DHT
+    pip install -r requirements.txt
 
 run:
 	python3 humidity.py
