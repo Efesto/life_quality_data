@@ -1,5 +1,5 @@
 [Unit]
-Description=Humidity and Temperature reader
+Description=Humidity and Temperature collector
 After=network.target
 
 [Service]
