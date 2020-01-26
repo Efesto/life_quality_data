@@ -16,7 +16,7 @@ class MySql:
     def get_all(self):
         connection = self.connection()
         mycursor = connection.cursor()
-        mycursor.execute("SELECT * FROM readings")
+        mycursor.execute("SELECT * FROM readings ORDER BY datetime DESC")
         myresult = mycursor.fetchall()
 
         connection.close()
