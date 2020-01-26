@@ -26,7 +26,7 @@ class MySql:
     def create_table(self):
         connection = self.connection()
         mycursor = connection.cursor()
-        mycursor.execute("CREATE TABLE readings (datetime DATETIME, temperature INT, humidity INT)")
+        mycursor.execute("CREATE TABLE readings (datetime DATETIME, temperature FLOAT, humidity FLOAT)")
         connection.close()
     
     def insert_reading(self, time, temperature, humidity):
