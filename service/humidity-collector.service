@@ -3,7 +3,7 @@ Description=Humidity and Temperature reader
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/python3 -u humidity.py
+ExecStart=/usr/bin/python3 -u collector.py
 WorkingDirectory=/home/pi/pi_humidity
 StandardOutput=inherit
 StandardError=inherit
