@@ -29,7 +29,7 @@ class MySql:
         mycursor.execute("CREATE TABLE readings (datetime DATETIME, temperature INT, humidity INT)")
         connection.close()
     
-    def insert_reading(self, time, humidity, temperature):
+    def insert_reading(self, time, temperature, humidity):
         connection = self.connection()
         reading_time = time.strftime('%Y-%m-%d %H:%M:%S')
         mycursor = connection.cursor()
