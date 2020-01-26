@@ -12,7 +12,7 @@ class FileHandler(BaseHTTPRequestHandler):
 
 			repo = mysql.MySql()
 
-			for reading in repo.get_all()
+			for reading in repo.get_all():
 				self.wfile.write(f"{reading[0]strftime('%Y-%m-%d %H:%M:%S')}, {reading[1]}C {reading[2]}%<br />")
 
 with socketserver.TCPServer(("", SERVER_PORT), FileHandler) as httpd:
