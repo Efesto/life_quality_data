@@ -15,5 +15,5 @@ remove-service:
 install-deps:
 	pip install -r requirements.txt
 
-run:
-	python3 humidity.py
+db-create_table:
+	python3 repository/create_table.py
