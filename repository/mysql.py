@@ -35,3 +35,4 @@ class MySql:
         mycursor = connection.cursor()
         mycursor.execute(f"INSERT INTO readings (datetime, humidity, temperature) VALUES ('{reading_time}', {humidity}, {temperature})")
         connection.commit()
+        connection.close()
