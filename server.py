@@ -1,9 +1,6 @@
-
-
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import socketserver
-
-FILE_PATH="/home/pi/share/readings.csv"
+from repository import mysql
 
 SERVER_PORT = 8080
 
@@ -13,8 +10,10 @@ class FileHandler(BaseHTTPRequestHandler):
 			self.send_header('Content-type', 'text/html')
 			self.end_headers()
 
-			with open(FILE_PATH, 'rb') as file:
-				content = file.read().decode("utf-8").replace("\n", "<br />")
+			repo = mysql.MySql()
+
+			for reading in repo.get_all():
+				content = f"{reading[0].strftime('%Y-%m-%d %H:%M:%S')}, {reading[1]}C {reading[2]}%<br />"
 				self.wfile.write(content.encode())
 
 with socketserver.TCPServer(("", SERVER_PORT), FileHandler) as httpd:
