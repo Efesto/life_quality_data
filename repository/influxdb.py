@@ -7,10 +7,10 @@ load_dotenv()
 
 class InfluxDB:
   def insert_temperature_and_humidity(self, temperature, humidity):
-    host="localhost",
-    port = 8086
-    user=os.environ['INFLUXDB_COLLECTOR_USER_NAME'],
-    password=os.environ['INFLUXDB_COLLECTOR_USER_PASSWORD'],
+    host="localhost"
+    port=8086
+    user=os.environ['INFLUXDB_COLLECTOR_USER_NAME']
+    password=os.environ['INFLUXDB_COLLECTOR_USER_PASSWORD']
     dbname="readings"
 
     client = InfluxDBClient(host, port, user, password, dbname)
