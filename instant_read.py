@@ -1,6 +1,7 @@
 from sensors import dht
 
 try:
-	print("{}C {}%".format(dht.DHT().read()))
+	humidity, temperature = dht.DHT().read()
+	print("{}C {}%".format(temperature, humidity))
 except KeyboardInterrupt:
 	pass
