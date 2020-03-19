@@ -9,6 +9,6 @@ GPIO.setup(DHT_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 try:
 	humidity, temperature = Adafruit_DHT.read_retry(DHT_SENSOR, DHT_PIN)
-	print("{}C {}\\%".format(temperature, humidity))
+	print("{}C {}%".format(temperature, humidity))
 except KeyboardInterrupt:
 	pass
