@@ -1,4 +1,4 @@
-from repository import dht
+from sensors import dht
 
 try:
 	print("{}C {}%".format(dht.DHT().read()))

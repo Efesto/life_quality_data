@@ -8,5 +8,5 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(DHT_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 class DHT:
-	def read(self):
+    def read(self):
         return Adafruit_DHT.read_retry(DHT_SENSOR, DHT_PIN)
