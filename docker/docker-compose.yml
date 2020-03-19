@@ -1,14 +1,10 @@
-version: '3.7'
+version: '3.3'
 
 services:
   db:
-    image: mysql
-    command: --default-authentication-plugin=mysql_native_password
+    image: influxdb:1.7
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_USER: humidity
-      MYSQL_PASSWORD: password
-      MYSQL_DATABASE: humidity
+      INFLUXDB_DB: readings
     ports:
-    - 3306:3306
+    - 8086:8086

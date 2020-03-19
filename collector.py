@@ -1,15 +1,17 @@
 import time
-from repository import mysql
+from repository import influxdb
 from sensors import dht
+
+INTERVAL = 60
 
 try:
 	while True:
-		repo = mysql.MySql()
+		repo = influxdb.InfluxDB()
 	
 		humidity, temperature = dht.DHT().read()
 
 		if humidity is not None and temperature is not None:
-			repo.insert_reading(time, temperature, humidity)			
+			repo.insert_temperature_and_humidity(temperature, humidity)			
 		else:
 			print("Nope")
 		time.sleep(INTERVAL)
