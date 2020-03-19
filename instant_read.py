@@ -8,7 +8,7 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(DHT_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 try:
-	reading = Adafruit_DHT.read_retry(DHT_SENSOR, DHT_PIN)
-	printf("{reading[0].strftime('%Y-%m-%d %H:%M:%S')}, {reading[1]}C {reading[2]}\\%")
-except KeyboardInterrupt:	
+	humidity, temperature = Adafruit_DHT.read_retry(DHT_SENSOR, DHT_PIN)
+	print("{}C {}\\%".format(temperature, humidity))
+except KeyboardInterrupt:
 	pass
