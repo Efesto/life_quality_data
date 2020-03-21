@@ -1,6 +1,6 @@
 from influxdb import InfluxDBClient
 import os
-import time
+import datetime
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -10,7 +10,7 @@ class InfluxDB:
     data = [
         {
           "measurement": "DHT-22",
-            "time": time.ctime(),
+            "time": self.time(),
             "fields": {
               "temperature" : temperature,
               "humidity": humidity
@@ -25,7 +25,7 @@ class InfluxDB:
     data = [
             {
               "measurement": "CCS811",
-                "time": time.ctime(),
+                "time": self.time(),
                 "fields": {
                   "co2" : CO2,
                   "TVOC": TVOC
@@ -36,6 +36,8 @@ class InfluxDB:
     # Send the JSON data to InfluxDB
     self.client().write_points(data)
 
+  def time(self):
+    str(datetime.datetime.utcnow())
   
   def client(self):
     host="localhost"
