@@ -1,13 +1,12 @@
-import Adafruit_CCS811
-import RPi.GPIO as GPIO
+import board
+import busio
+import adafruit_ccs811
 
 class CCS811:
 	def read(self):
-		ccs =  Adafruit_CCS811()
-		temp = ccs.calculateTemperature()
-		ccs.tempOffset = temp - 25.0
+		i2c = busio.I2C(board.SCL, board.SDA)
+		ccs811 = adafruit_ccs811.CCS811(i2c)
 
-		if not ccs.readData():
-			return [ccs.geteCO2(), ccs.getTVOC(), temp]
-		else:
-			return [-1, -1, temp]
+		if not ccs811.data_ready:
+			return None
+		return [ccs811.eco2, ccs811.tvoc]
