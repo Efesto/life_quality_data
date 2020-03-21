@@ -7,14 +7,6 @@ load_dotenv()
 
 class InfluxDB:
   def insert_temperature_and_humidity(self, temperature, humidity):
-    host="localhost"
-    port=8086
-    user=os.environ['INFLUXDB_COLLECTOR_USER_NAME']
-    password=os.environ['INFLUXDB_COLLECTOR_USER_PASSWORD']
-    dbname="readings"
-
-    client = InfluxDBClient(host, port, user, password, dbname)
-
     data = [
         {
           "measurement": "DHT-22",
@@ -27,4 +19,29 @@ class InfluxDB:
       ]
 
     # Send the JSON data to InfluxDB
-    client.write_points(data)
+    self.client().write_points(data)
+
+  def insert_co2_and_tvoc(self, CO2, TVOC):
+    data = [
+            {
+              "measurement": "CCS811",
+                "time": time.ctime(),
+                "fields": {
+                  "co2" : CO2,
+                  "TVOC": TVOC
+                }
+            }
+          ]
+
+    # Send the JSON data to InfluxDB
+    self.client().write_points(data)
+
+  
+  def client(self):
+    host="localhost"
+    port=8086
+    user=os.environ['INFLUXDB_COLLECTOR_USER_NAME']
+    password=os.environ['INFLUXDB_COLLECTOR_USER_PASSWORD']
+    dbname="readings"
+
+    return InfluxDBClient(host, port, user, password, dbname)

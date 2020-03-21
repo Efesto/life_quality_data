@@ -1,6 +1,4 @@
 Adafruit_Python_DHT
-adafruit-circuitpython-ccs811
-adafruit-circuitpython-register
-adafruit-circuitpython-busdevice
+Adafruit_CCS811
 influxdb
 python-dotenv
