@@ -37,7 +37,7 @@ class InfluxDB:
     self.client().write_points(data)
 
   def time(self):
-    time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
+    return time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
   
   def client(self):
     host="localhost"
