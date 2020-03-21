@@ -12,5 +12,6 @@ class CCS811:
 				return [ccs.geteCO2(), ccs.getTVOC()]
 			else:
 				return [None, None]
-		except OSError:
+		except OSError as e:
+			print(e)
 			return [None, None]
