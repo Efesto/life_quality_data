@@ -1,6 +1,6 @@
 from influxdb import InfluxDBClient
 import os
-import datetime
+import time
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -37,7 +37,7 @@ class InfluxDB:
     self.client().write_points(data)
 
   def time(self):
-    str(datetime.datetime.utcnow())
+    time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
   
   def client(self):
     host="localhost"
