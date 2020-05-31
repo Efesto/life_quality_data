@@ -18,6 +18,10 @@ This repo DOES NOT explain how to configure the individual sensor, for such refe
 2. add `dtparam=i2c_baudrate=10000` to `/boot/config.txt`
 3. check with `sudo i2cdetect -y 1`
 
+## Installation
+
+`sudo bash -c "$(wget -O- https://raw.githubusercontent.com/Efesto/life_quality_data/master/install.sh)"`
+
 ## How to configure Grafana for authentication-free dashboard
 1. Install Grafana
 2. set it as service
@@ -27,7 +31,3 @@ This repo DOES NOT explain how to configure the individual sensor, for such refe
 auto_sign_up = true
 enabled = true
 ```
-4. Install nginx
-   1. `sudo apt-get install nginx`
-   2. `cp nginx/grafana_viewer /etc/nginx/sites-enabled/default`
-   3. `sudo systemctl restart nginx.service`

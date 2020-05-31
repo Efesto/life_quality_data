@@ -1,0 +1,6 @@
+CREATE DATABASE "readings"
+CREATE USER admin WITH PASSWORD 'admin' WITH ALL PRIVILEGES
+CREATE USER collector WITH PASSWORD 'collector'
+GRANT ALL ON "readings" TO "collector"
+CREATE USER dashboard WITH PASSWORD 'dashboard'
+GRANT READ ON "readings" TO "dashboard"
