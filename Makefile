@@ -25,7 +25,7 @@ install-grafana:
 	sudo apt-get install apt-transport-https software-properties-common -y
 	wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -
 	sudo apt-get update
-	sudo apt-get install grafana
+	sudo apt-get install grafana -y
 	sudo systemctl enable grafana-server.service
 	sudo systemctl start grafana-server
 	sudo systemctl status grafana-server
