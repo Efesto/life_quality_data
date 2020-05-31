@@ -25,7 +25,6 @@ install-db:
 		
 	sudo apt-get install influxdb -y
 	sudo systemctl enable influxd
-	sudo systemctl start influxd
 	influx -import -path=db.import -precision=s
 
 install-nginx:

@@ -20,12 +20,10 @@ This repo DOES NOT explain how to configure the individual sensor, for such refe
 
 ## Installation
 
-`sudo bash -c "$(wget -O- https://raw.githubusercontent.com/Efesto/life_quality_data/master/install.sh)"`
+`bash -c "$(wget -O- https://raw.githubusercontent.com/Efesto/life_quality_data/master/install.sh)"`
 
 ## How to configure Grafana for authentication-free dashboard
-1. Install Grafana
-2. set it as service
-3. refer to https://grafana.com/docs/grafana/latest/installation/configuration/ for adding the following to grafana config
+1. refer to https://grafana.com/docs/grafana/latest/installation/configuration/ for adding the following to grafana config
 ```
 [auth.proxy]
 auto_sign_up = true

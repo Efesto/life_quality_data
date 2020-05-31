@@ -1,9 +1,7 @@
 #!/bin/bash
 
-set -e
-
 # packages
-apt-get install git python3 wget -y
+sudo apt-get install git python3 wget -y
 
 # pull repository
 git clone https://github.com/Efesto/life_quality_data.git ~/life_quality_data
