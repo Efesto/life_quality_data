@@ -15,7 +15,7 @@ This repo DOES NOT explain how to configure the individual sensor, for such refe
 
 ## Installation
 
-1. `bash -c "$(wget -O- https://raw.githubusercontent.com/Efesto/life_quality_data/master/install-full.sh)"` Full version
+1. `bash -c "$(wget -O- https://raw.githubusercontent.com/Efesto/life_quality_data/master/install-grafana_and_db.sh)"` Grafana and DB
 2. `bash -c "$(wget -O- https://raw.githubusercontent.com/Efesto/life_quality_data/master/install-collector.sh)"` Collector only
 3. Configure .env file content by copying .env.sample file
 4. Configure CCS811 (see following)
