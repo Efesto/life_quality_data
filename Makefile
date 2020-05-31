@@ -7,7 +7,7 @@ remove-service:
 	sudo systemctl disable life_quality_data-server.service
 
 install-deps:
-	pip install -r requirements.txt
+	pip3 install -r requirements.txt
 
 install-db:
 	echo "deb https://repos.influxdata.com/ubuntu bionic stable" | sudo tee /etc/apt/sources.list.d/influxdb.list
@@ -18,7 +18,7 @@ install-db:
 
 install-nginx:
 	sudo apt-get install nginx -y
-	cp nginx/grafana_viewer /etc/nginx/sites-enabled/default
+	sudo cp nginx/grafana_viewer /etc/nginx/sites-enabled/default
 	sudo systemctl restart nginx.service
 
 install-grafana:
