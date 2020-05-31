@@ -40,8 +40,8 @@ class InfluxDB:
     return time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
   
   def client(self):
-    host="localhost"
-    port=8086
+    host=os.environ['INFLUXDB_HOST']
+    port=os.environ['INFLUXDB_PORT']
     user=os.environ['INFLUXDB_COLLECTOR_USER_NAME']
     password=os.environ['INFLUXDB_COLLECTOR_USER_PASSWORD']
     dbname="readings"

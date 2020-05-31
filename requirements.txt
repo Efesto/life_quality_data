@@ -2,3 +2,4 @@ Adafruit_Python_DHT
 Adafruit_CCS811
 influxdb
 python-dotenv
+RPi.GPIO
