@@ -22,10 +22,9 @@ install-nginx:
 	sudo systemctl restart nginx.service
 
 install-grafana:
-	sudo apt-get install apt-transport-https software-properties-common -y
-	wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -
-	sudo apt-get update
-	sudo apt-get install grafana -y
+	sudo apt-get install -y adduser libfontconfig1
+	wget https://dl.grafana.com/oss/release/grafana_7.0.3_armhf.deb
+	sudo dpkg -i grafana_7.0.3_armhf.deb
 	sudo systemctl enable grafana-server.service
 	sudo systemctl start grafana-server
 	sudo systemctl status grafana-server
