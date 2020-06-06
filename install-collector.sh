@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # packages
-sudo apt-get install git python3 python3-pip wget -y
+sudo apt-get install git python3 python3-pip i2c-tools wget -y
 
 # pull repository
 git clone https://github.com/Efesto/life_quality_data.git ~/life_quality_data
