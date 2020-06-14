@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # packages
+sudo apt-get update
 sudo apt-get install git python3 python3-pip i2c-tools wget -y
 
 # pull repository
